@@ -1,22 +1,22 @@
 /*===== VARIABLES =====*/
 :root {
     /* Colors - Enhanced Ayurvedic Palette with HSL values for better control */
-    --primary-color: hsl(140, 24%, 39%); /* Deeper forest green for Kapha balance */
-    --primary-light: hsl(143, 24%, 56%); /* Lighter shade for accents */
-    --secondary-color: hsl(38, 59%, 65%); /* Warm gold for Pitta balance */
-    --secondary-light: hsl(38, 59%, 75%); /* Lighter gold for hover states */
-    --accent-color: hsl(4, 48%, 48%); /* Earthy red for Vata balance */
-    --dark-green: hsl(144, 28%, 29%); /* Deep forest green */
-    --light-green: hsl(140, 24%, 70%); /* Soft sage green */
-    --light-beige: hsl(40, 33%, 95%); /* Warm papyrus */
-    --dark-beige: hsl(40, 33%, 85%); /* Richer papyrus */
-    --dark-text: hsl(0, 0%, 23%); /* Softer black for text */
-    --dark-text-faded: hsl(0, 0%, 33%); /* Lighter version for some text */
-    --light-text: hsl(0, 0%, 98%); /* Off-white for contrast */
-    --medium-text: hsl(0, 0%, 40%); /* Balanced gray */
+    --primary-color: hsl(210, 64%, 39%); /* Deep ocean blue replacing forest green */
+    --primary-light: hsl(210, 60%, 56%); /* Lighter blue for accents */
+    --secondary-color: hsl(16, 85%, 67%); /* Soft coral replacing warm gold */
+    --secondary-light: hsl(16, 85%, 75%); /* Lighter coral for hover states */
+    --accent-color: hsl(4, 48%, 48%); /* Keeping earthy red for Vata balance */
+    --dark-green: hsl(210, 70%, 29%); /* Deep navy blue replacing dark green */
+    --light-green: hsl(210, 50%, 70%); /* Soft sky blue replacing sage green */
+    --light-beige: hsl(40, 33%, 95%); /* Keeping warm papyrus */
+    --dark-beige: hsl(40, 33%, 85%); /* Keeping richer papyrus */
+    --dark-text: hsl(0, 0%, 23%); /* Keeping softer black for text */
+    --dark-text-faded: hsl(0, 0%, 33%); /* Keeping lighter version for some text */
+    --light-text: hsl(0, 0%, 98%); /* Keeping off-white for contrast */
+    --medium-text: hsl(0, 0%, 40%); /* Keeping balanced gray */
     --border-color: hsl(0, 0%, 88%);
     --shadow-color: hsla(0, 0%, 0%, 0.1);
-    --overlay-color: hsla(144, 28%, 29%, 0.85); /* Dark green overlay */
+    --overlay-color: hsla(210, 70%, 29%, 0.85); /* Dark blue overlay replacing green */
     
     /* Typography - Enhanced with more precision */
     --heading-font: 'Cormorant Garamond', serif;
