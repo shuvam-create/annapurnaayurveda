@@ -1,0 +1,386 @@
+/*===== MOBILE POLISH & AYURVEDIC AESTHETICS =====*/
+/*===== Beautiful, calming design for mobile devices =====*/
+
+/* Smooth color transitions for all elements */
+* {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* Enhanced mobile scrollbar (for browsers that support it) */
+@media (max-width: 768px) {
+    ::-webkit-scrollbar {
+        width: 6px;
+    }
+    
+    ::-webkit-scrollbar-track {
+        background: var(--light-beige);
+    }
+    
+    ::-webkit-scrollbar-thumb {
+        background: var(--primary-color);
+        border-radius: 3px;
+    }
+    
+    ::-webkit-scrollbar-thumb:hover {
+        background: var(--dark-green);
+    }
+}
+
+/* Enhance focus states for mobile */
+@media (max-width: 768px) {
+    a:focus,
+    button:focus,
+    .nav-link:focus {
+        outline: 3px solid var(--secondary-color);
+        outline-offset: 3px;
+        box-shadow: 0 0 0 6px rgba(218, 183, 112, 0.2);
+    }
+    
+    /* Beautiful ripple effect on tap */
+    .btn,
+    .nav-link,
+    .gallery-arrow,
+    .hamburger {
+        position: relative;
+        overflow: hidden;
+    }
+    
+    .btn::after,
+    .gallery-arrow::after {
+        content: '';
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 0;
+        height: 0;
+        border-radius: 50%;
+        background: rgba(255, 255, 255, 0.3);
+        transform: translate(-50%, -50%);
+        transition: width 0.6s, height 0.6s;
+    }
+    
+    .btn:active::after,
+    .gallery-arrow:active::after {
+        width: 300px;
+        height: 300px;
+    }
+}
+
+/* Ayurvedic calming animations */
+@media (max-width: 768px) {
+    /* Fade in sections as they appear */
+    section {
+        animation: sectionFadeIn 0.6s ease-out;
+    }
+    
+    @keyframes sectionFadeIn {
+        from {
+            opacity: 0;
+            transform: translateY(20px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+    
+    /* Gentle pulse for important elements */
+    .hero-badge {
+        animation: gentlePulse 3s ease-in-out infinite;
+    }
+    
+    @keyframes gentlePulse {
+        0%, 100% {
+            transform: scale(1);
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.15);
+        }
+        50% {
+            transform: scale(1.03);
+            box-shadow: 0 5px 20px rgba(218, 183, 112, 0.4);
+        }
+    }
+    
+    /* Floating effect for cards when scrolling into view */
+    .feature-card.is-visible,
+    .service-card.is-visible {
+        animation: floatIn 0.8s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+    }
+    
+    @keyframes floatIn {
+        from {
+            opacity: 0;
+            transform: translateY(40px) scale(0.95);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0) scale(1);
+        }
+    }
+}
+
+/* Enhanced testimonials for mobile */
+@media (max-width: 768px) {
+    .testimonial-content {
+        padding: 3.5rem 2.5rem;
+        border-radius: 20px;
+        box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
+        background: linear-gradient(135deg, 
+            rgba(255, 255, 255, 0.98) 0%, 
+            rgba(247, 243, 233, 0.98) 100%);
+    }
+    
+    .testimonial-text {
+        font-size: 1.7rem;
+        line-height: 1.8;
+        color: var(--dark-text);
+        margin-bottom: 2.5rem;
+    }
+    
+    .quote-icon {
+        width: 50px;
+        height: 50px;
+        background: linear-gradient(135deg, 
+            var(--primary-color) 0%, 
+            var(--dark-green) 100%);
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    }
+    
+    .testimonial-author img {
+        border: 3px solid var(--secondary-color);
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+    }
+}
+
+/* Gallery enhancement for mobile */
+@media (max-width: 768px) {
+    .gallery-container,
+    .video-gallery-container {
+        border-radius: 20px;
+        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12);
+        overflow: hidden;
+    }
+    
+    .gallery-arrow,
+    .video-gallery-arrow {
+        width: 48px;
+        height: 48px;
+        background-color: rgba(255, 255, 255, 0.95);
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        backdrop-filter: blur(8px);
+        -webkit-backdrop-filter: blur(8px);
+    }
+    
+    .gallery-arrow:active,
+    .video-gallery-arrow:active {
+        transform: scale(0.9);
+        background-color: var(--light-text);
+    }
+    
+    .gallery-dots,
+    .video-gallery-dots {
+        margin-top: 2.5rem;
+        gap: 12px;
+    }
+    
+    .gallery-dot,
+    .video-gallery-dot {
+        width: 12px;
+        height: 12px;
+        transition: all 0.3s ease;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+    }
+    
+    .gallery-dot.active,
+    .video-gallery-dot.active {
+        width: 32px;
+        border-radius: 6px;
+        transform: scale(1);
+        box-shadow: 0 3px 12px rgba(74, 124, 89, 0.4);
+    }
+}
+
+/* Footer enhancement for mobile */
+@media (max-width: 768px) {
+    .footer {
+        background: linear-gradient(135deg, 
+            var(--dark-green) 0%, 
+            hsl(210, 70%, 25%) 100%);
+        padding-top: 6rem;
+    }
+    
+    .footer-logo {
+        justify-content: center;
+        margin-bottom: 2rem;
+    }
+    
+    .footer .social-links a {
+        width: 48px;
+        height: 48px;
+        background-color: rgba(255, 255, 255, 0.12);
+        transition: all 0.3s ease;
+    }
+    
+    .footer .social-links a:active {
+        transform: translateY(-5px) scale(0.95);
+        background-color: var(--secondary-color);
+        box-shadow: 0 6px 20px rgba(218, 183, 112, 0.4);
+    }
+}
+
+/* Tabs enhancement for mobile */
+@media (max-width: 768px) {
+    .tabs {
+        padding: 1rem 0;
+        gap: 12px;
+        background: linear-gradient(to right, 
+            rgba(255,255,255,0.05) 0%, 
+            transparent 10%, 
+            transparent 90%, 
+            rgba(255,255,255,0.05) 100%);
+    }
+    
+    .tab-btn {
+        padding: 1.2rem 2.2rem;
+        font-size: 1.5rem;
+        border-radius: 25px;
+        background-color: rgba(74, 124, 89, 0.08);
+        color: var(--dark-text);
+        font-weight: 600;
+        transition: all 0.3s ease;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+    }
+    
+    .tab-btn:active {
+        transform: scale(0.96);
+    }
+    
+    .tab-btn.active {
+        background: linear-gradient(135deg, 
+            var(--primary-color) 0%, 
+            var(--dark-green) 100%);
+        color: #fff;
+        box-shadow: 0 4px 15px rgba(74, 124, 89, 0.4);
+        transform: scale(1.05);
+    }
+}
+
+/* Contact form/info enhancement */
+@media (max-width: 768px) {
+    .contact-heading h3 {
+        font-size: 2.8rem;
+        background: linear-gradient(135deg, 
+            var(--primary-color) 0%, 
+            var(--dark-green) 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+    }
+    
+    .cta-buttons .btn {
+        padding: 1.6rem 2.5rem;
+        font-size: 1.7rem;
+        font-weight: 600;
+        border-radius: 12px;
+        box-shadow: 0 6px 24px rgba(0, 0, 0, 0.15);
+    }
+    
+    .cta-buttons .btn:active {
+        transform: translateY(2px);
+        box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+    }
+    
+    .cta-buttons .btn i {
+        font-size: 2rem;
+    }
+}
+
+/* Loading state polish */
+@media (max-width: 768px) {
+    .loading * {
+        animation-play-state: paused !important;
+        transition: none !important;
+    }
+    
+    .page-loaded {
+        animation: pageReveal 0.6s ease-out;
+    }
+    
+    @keyframes pageReveal {
+        from {
+            opacity: 0;
+        }
+        to {
+            opacity: 1;
+        }
+    }
+}
+
+/* Practitioner section mobile enhancement */
+@media (max-width: 768px) {
+    .practitioner-badge {
+        padding: 1.4rem 2rem;
+        border-radius: 12px;
+        box-shadow: 0 6px 24px rgba(0, 0, 0, 0.15);
+        background: linear-gradient(135deg, 
+            var(--primary-color) 0%, 
+            var(--dark-green) 100%);
+    }
+    
+    .practitioner-quote {
+        padding: 2.5rem;
+        border-radius: 16px;
+        border-left: 5px solid var(--secondary-color);
+        background: linear-gradient(135deg, 
+            var(--light-beige) 0%, 
+            rgba(247, 243, 233, 0.8) 100%);
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    }
+    
+    .social-links a {
+        width: 50px;
+        height: 50px;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        transition: all 0.3s ease;
+    }
+    
+    .social-links a:active {
+        transform: translateY(-5px) rotate(5deg);
+    }
+}
+
+/* About section mobile refinement */
+@media (max-width: 768px) {
+    .about-highlights {
+        gap: 1.5rem;
+    }
+    
+    .highlight {
+        padding: 1.5rem;
+        border-radius: 12px;
+        background-color: rgba(255, 255, 255, 0.8);
+        box-shadow: 0 3px 12px rgba(0, 0, 0, 0.06);
+        transition: all 0.3s ease;
+    }
+    
+    .highlight:active {
+        transform: translateX(8px) scale(0.98);
+        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.12);
+    }
+    
+    .experience-badge {
+        width: 130px;
+        height: 130px;
+        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+        background: linear-gradient(135deg, 
+            var(--primary-color) 0%, 
+            var(--dark-green) 100%);
+    }
+}
+
+/* Ensure smooth transitions everywhere */
+@media (max-width: 768px) {
+    * {
+        transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    }
+}
