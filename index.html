@@ -1,14 +1,46 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="loading">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
+    <meta name="theme-color" content="#2E5746">
+    <meta name="description" content="Annapurna Ayurveda Clinic offers authentic Ayurvedic treatments, holistic healing, and wellness services in Pokhara, Nepal.">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/jpeg" href="logo.jpeg">
+    <link rel="shortcut icon" type="image/jpeg" href="logo.jpeg">
+    <link rel="apple-touch-icon" href="logo.jpeg">
+    
     <title>Annapurna Ayurveda Clinic | Holistic Healing & Wellness</title>
+    
+    <!-- Preload ONLY critical resources - NO BLOAT -->
+    <link rel="preload" href="styles.css" as="style">
+    <link rel="preload" href="css/hero-slider.css" as="style">
+    <link rel="preload" href="css/mobile-optimized.css" as="style">
+    
+    <!-- Stylesheets - STREAMLINED -->
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="css/hero-slider.css">
+    <link rel="stylesheet" href="css/mobile-optimized.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    
+    <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Simple scroll prevention - BULLETPROOF -->
+    <script>
+        (function() {
+            'use strict';
+            // Disable scroll restoration only
+            if ('scrollRestoration' in history) {
+                history.scrollRestoration = 'manual';
+            }
+            // Force to top
+            window.scrollTo(0, 0);
+        })();
+    </script>
 </head>
 <body>
     <!-- Header Section -->
@@ -26,7 +58,6 @@
                     <li><a href="#home" class="nav-link active">Home</a></li>
                     <li><a href="#about" class="nav-link">About</a></li>
                     <li><a href="#services" class="nav-link">Services</a></li>
-                    <li><a href="#gallery" class="nav-link">Gallery</a></li>
                     <li><a href="#practitioner" class="nav-link">Our Doctor</a></li>
                     <li><a href="#testimonials" class="nav-link">Testimonials</a></li>
                     <li><a href="#videos" class="nav-link">Videos</a></li>
@@ -42,33 +73,83 @@
         </div>
     </header>
 
-    <!-- Hero Section -->
-    <section class="hero" id="home">
-        <div class="hero-background">
-            <div class="overlay"></div>
-        </div>
-        <div class="container">
-            <div class="hero-content">
-                <div class="hero-badge">Authentic Ayurvedic Healing</div>
-                <h1>Nature's Healing, Modern Care</h1>
-                <p>Experience authentic Ayurvedic treatments customized to restore your body's natural balance and promote holistic well-being at Annapurna Ayurveda Clinic.</p>
-                <div class="hero-btns">
-                    <a href="#contact" class="btn btn-primary">Book Consultation</a>
-                    <a href="#services" class="btn btn-secondary">Explore Services</a>
+    <!-- Professional Hero Slider Section -->
+    <section class="hero-slider" id="home">
+        <div class="hero-slider-container">
+            <!-- Slider Track -->
+            <div class="hero-slider-track">
+                <!-- Slide 1 -->
+                <div class="hero-slide active">
+                    <img src="clinic.jpg" alt="Annapurna Ayurveda Clinic" class="hero-slide-img">
+                    <div class="hero-slide-overlay"></div>
+                    <div class="hero-slide-content">
+                        <h2>Welcome to Annapurna Ayurveda</h2>
+                        <p>Traditional Healing | Modern Wellness</p>
+                        <a href="#contact" class="hero-cta-btn">
+                            <i class="fas fa-calendar-check"></i>
+                            <span>Book Consultation</span>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Slide 2 -->
+                <div class="hero-slide">
+                    <img src="clinic2.jpg" alt="Treatment Rooms" class="hero-slide-img">
+                    <div class="hero-slide-overlay"></div>
+                    <div class="hero-slide-content">
+                        <h2>Authentic Ayurvedic Treatments</h2>
+                        <p>Personalized Care for Your Wellbeing</p>
+                        <a href="#contact" class="hero-cta-btn">
+                            <i class="fas fa-calendar-check"></i>
+                            <span>Book Consultation</span>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Slide 3 -->
+                <div class="hero-slide">
+                    <img src="clinic3.jpg" alt="Consultation Area" class="hero-slide-img">
+                    <div class="hero-slide-overlay"></div>
+                    <div class="hero-slide-content">
+                        <h2>Expert Ayurvedic Care</h2>
+                        <p>Restoring Balance Naturally</p>
+                        <a href="#contact" class="hero-cta-btn">
+                            <i class="fas fa-calendar-check"></i>
+                            <span>Book Consultation</span>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Slide 4 -->
+                <div class="hero-slide">
+                    <img src="room.jpeg" alt="Treatment Room" class="hero-slide-img">
+                    <div class="hero-slide-overlay"></div>
+                    <div class="hero-slide-content">
+                        <h2>Peaceful Healing Environment</h2>
+                        <p>Your Journey to Wellness Begins Here</p>
+                        <a href="#contact" class="hero-cta-btn">
+                            <i class="fas fa-calendar-check"></i>
+                            <span>Book Consultation</span>
+                        </a>
+                    </div>
                 </div>
             </div>
+            
+            <!-- Dots Navigation -->
+            <div class="hero-slider-dots"></div>
         </div>
-        <div class="shape-divider">
-            <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
-                <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z" class="shape-fill"></path>
-            </svg>
-        </div>
+        
     </section>
 
     <!-- Features Section -->
     <section class="features">
         <div class="texture-overlay"></div>
         <div class="container">
+            <div class="section-header compact features-intro">
+                <span class="subheading">Natural Remedies</span>
+                <h2>Therapeutic Massage | Expert Practitioner | Holistic Approach</h2>
+                <div class="decorative-line"></div>
+            </div>
             <div class="feature-grid">
                 <div class="feature-card">
                     <div class="icon">
@@ -438,6 +519,83 @@
                     <a href="#contact" class="btn btn-primary">Schedule a Consultation</a>
                 </div>
             </div>
+            
+            <!-- Second Doctor -->
+            <div class="practitioner-wrapper">
+                <div class="practitioner-image">
+                    <div class="practitioner-img-inner">
+                        <img src="doctor2.jpeg" alt="Dr. Anupam Chhetri">
+                        <div class="practitioner-badge">
+                            <div class="badge-icon"><i class="fas fa-user-md"></i></div>
+                            <div class="badge-text">Panchakarma Specialist</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="practitioner-content">
+                    <div class="practitioner-symbol">
+                        <svg viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M40 15C40 15 30 25 20 25C20 45 30 65 40 65C50 65 60 45 60 25C50 25 40 15 40 15Z" stroke="#DAB770" stroke-width="2" fill="none"/>
+                            <circle cx="40" cy="40" r="3" fill="#5c9868" opacity="0.5"/>
+                        </svg>
+                    </div>
+                    <h3>Dr. Anupam Chhetri</h3>
+                    <span class="specialty">Assistant Professor, Faculty of Panchakarma & Physiotherapy</span>
+                    
+                    <p>Dr. Anupam Chhetri brings a unique multidisciplinary approach to Ayurvedic medicine, combining traditional Panchakarma therapy with modern healthcare management and emerging technologies. His extensive academic credentials include an MD in Panchakarma, MBA in Healthcare Management, and specialized certifications in Yoga, Medical Astrology, and Medical Patents.</p>
+                    
+                    
+                    <div class="practitioner-quote">
+                        <i class="fas fa-quote-left"></i>
+                        <p>"The integration of traditional Panchakarma wisdom with modern science opens new pathways for holistic healing and patient wellness."</p>
+                    </div>
+                    
+                    <div class="social-links">
+                       <a href="https://www.instagram.com/annapurnaayurveda"><i class="fab fa-instagram"></i></a>
+                       
+                        <a href="https://www.facebook.com/annapurna.cli"><i class="fab fa-facebook-f"></i></a>
+                    </div>
+                    
+                    <a href="#contact" class="btn btn-primary">Schedule a Consultation</a>
+                </div>
+            </div>
+            
+            <!-- Third Doctor -->
+            <div class="practitioner-wrapper">
+                <div class="practitioner-image">
+                    <div class="practitioner-img-inner">
+                        <img src="doctor3.jpeg" alt="Dr. Subhadra Karki">
+                        <div class="practitioner-badge">
+                            <div class="badge-icon"><i class="fas fa-heart"></i></div>
+                            <div class="badge-text">Garbha Sanskar Specialist</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="practitioner-content">
+                    <div class="practitioner-symbol">
+                        <svg viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M40 15C40 15 30 25 20 25C20 45 30 65 40 65C50 65 60 45 60 25C50 25 40 15 40 15Z" stroke="#DAB770" stroke-width="2" fill="none"/>
+                            <circle cx="40" cy="40" r="3" fill="#5c9868" opacity="0.5"/>
+                        </svg>
+                    </div>
+                    <h3>Dr. Subhadra Karki</h3>
+                    <span class="specialty">MS (Ayurveda) Gynecology & Obstetrics | PhD Scholar</span>
+                    
+                    <p>Dr. Subhadra Karki is an internationally recognized Ayurvedic physician with over a decade of specialized experience in women's health and prenatal care. With her MS in Ayurvedic Gynecology & Obstetrics and ongoing PhD research, she combines academic excellence with compassionate clinical practice.</p>
+                                        
+                    <div class="practitioner-quote">
+                        <i class="fas fa-quote-left"></i>
+                        <p>"Garbha Sanskar is the art of nurturing life from conception—creating harmony between mother, child, and nature for a healthy, joyful beginning."</p>
+                    </div>
+                    
+                    <div class="social-links">
+                       <a href="https://www.instagram.com/annapurnaayurveda"><i class="fab fa-instagram"></i></a>
+                       
+                        <a href="https://www.facebook.com/annapurna.cli"><i class="fab fa-facebook-f"></i></a>
+                    </div>
+                    
+                    <a href="#contact" class="btn btn-primary">Schedule a Consultation</a>
+                </div>
+            </div>
         </div>
     </section>
 
@@ -695,8 +853,10 @@
     <div id="gallery-live-region" class="sr-only" aria-live="polite" aria-atomic="true"></div>
     <div id="testimonial-live-region" class="sr-only" aria-live="polite" aria-atomic="true"></div>
     <div id="video-gallery-live-region" class="sr-only" aria-live="polite" aria-atomic="true"></div>
+    <div id="menu-live-region" class="sr-only" aria-live="polite" aria-atomic="true"></div>
 
     <!-- JavaScript -->
-    <script src="script.js"></script>
+    <script src="hero-slider.js"></script>
+    <script src="script.js" defer></script>
 </body>
 </html>
