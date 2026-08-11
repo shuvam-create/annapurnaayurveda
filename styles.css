@@ -169,6 +169,28 @@ ul, ol {
     list-style: none;
 }
 
+.doctor-points {
+    list-style: none;
+    padding-left: 0;
+    margin: 1rem 0 1.25rem;
+}
+
+.doctor-points li {
+    position: relative;
+    padding-left: 1.25rem;
+    margin-bottom: 0.65rem;
+    line-height: 1.6;
+}
+
+.doctor-points li::before {
+    content: "•";
+    position: absolute;
+    left: 0;
+    top: 0;
+    color: var(--secondary-color);
+    font-weight: 700;
+}
+
 /*===== ENHANCED UTILITY CLASSES =====*/
 .container {
     max-width: 1200px;
@@ -1516,8 +1538,72 @@ ul, ol {
     padding-bottom: 0;
 }
 
+.consultation-banner {
+    max-width: 760px;
+    margin: 0 auto clamp(3rem, 5vw, 4rem);
+    padding: clamp(1.5rem, 2.5vw, 2.25rem) clamp(1.25rem, 3vw, 3rem);
+    text-align: center;
+    background: linear-gradient(180deg, rgba(92, 152, 104, 0.08), rgba(92, 152, 104, 0.03));
+    border: 1px solid rgba(92, 152, 104, 0.18);
+    border-radius: var(--border-radius-lg);
+    box-shadow: var(--box-shadow);
+}
+
+.consultation-kicker {
+    font-size: clamp(0.95rem, 1.1vw, 1.05rem);
+    font-weight: 700;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--primary-color);
+    margin-bottom: 0.75rem;
+}
+
+.consultation-title {
+    font-size: clamp(1.1rem, 1.5vw, 1.35rem);
+    font-weight: 600;
+    color: var(--dark-text);
+    line-height: 1.6;
+    margin-bottom: 1.15rem;
+}
+
 .practitioner-image {
     position: relative;
+}
+
+.devraj-image-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0;
+    max-width: 100%;
+    margin: 0 auto;
+    overflow: hidden;
+    border-radius: var(--border-radius-lg);
+    box-shadow: var(--box-shadow);
+}
+
+.devraj-image-grid .practitioner-img-inner {
+    min-width: 0;
+    overflow: hidden;
+    border-radius: 0;
+    box-shadow: none;
+}
+
+.devraj-image-grid .practitioner-img-inner img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    aspect-ratio: 3 / 4;
+}
+
+.devraj-image-grid .practitioner-img-inner::before,
+.devraj-image-grid .practitioner-img-inner::after {
+    display: none;
+}
+
+@media (max-width: 768px) {
+    .devraj-image-grid {
+        grid-template-columns: 1fr;
+    }
 }
 
 .practitioner-img-inner {
