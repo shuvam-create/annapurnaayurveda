@@ -3,11 +3,6 @@
 
 /* ========== CORE FIXES ========== */
 
-/* Hide gallery - images in hero slider */
-#gallery {
-    display: none !important;
-}
-
 /* Prevent horizontal overflow */
 html, body {
     overflow-x: hidden;

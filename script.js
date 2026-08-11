@@ -797,10 +797,40 @@ document.addEventListener('DOMContentLoaded', function() {
         updateGalleryPosition();
     }
     
+    // Force-load the current slide and its neighbours.
+    // Slides 2+ are loading="lazy", but a transform-based carousel never scrolls them
+    // into view, so the browser may never fetch them. Promoting them to eager here
+    // guarantees a slide is loaded before it is shown, while slides further away
+    // stay deferred and off the initial page load.
+    function preloadGalleryNeighbours(index) {
+        if (!gallerySlides.length) return;
+        const total = gallerySlides.length;
+        [index, (index + 1) % total, (index - 1 + total) % total].forEach(i => {
+            const slide = gallerySlides[i];
+            const img = slide.querySelector('img');
+            if (!img) return;
+
+            if (img.getAttribute('loading') === 'lazy') {
+                img.setAttribute('loading', 'eager');
+            }
+
+            // Feed the blurred backdrop (see .gallery-image::before). Set here rather
+            // than up front so it reuses the already-loading image and doesn't pull
+            // all 28 photos in on page load.
+            const holder = slide.querySelector('.gallery-image');
+            if (holder && !holder.style.backgroundImage) {
+                holder.style.backgroundImage = 'url("' + img.getAttribute('src') + '")';
+            }
+        });
+    }
+
     // Update gallery slider position
     function updateGalleryPosition() {
         if (!galleryTrack || !gallerySlides.length) return;
-        
+
+        // Make sure this slide (and the next/previous) have their images loaded
+        preloadGalleryNeighbours(galleryCurrentIndex);
+
         // Get current slide width
         const slideWidth = gallerySlides[0].offsetWidth;
         

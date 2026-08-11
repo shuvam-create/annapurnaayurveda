@@ -48,7 +48,7 @@ class AnnapurnaApp {
     preloadCriticalImages() {
         const criticalImages = [
             // Add paths to critical images that should load first
-            'clinic.jpg',
+            'clinic.webp',
             'logo.jpeg'
         ];
         

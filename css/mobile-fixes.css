@@ -1,11 +1,6 @@
 /*===== MOBILE-SPECIFIC OPTIMIZATIONS =====*/
 /*===== Fixes for scroll issues and better mobile UX =====*/
 
-/* Hide gallery section - images now used in hero slider */
-#gallery {
-    display: none !important;
-}
-
 /* Prevent horizontal overflow on all screen sizes */
 html, body {
     overflow-x: hidden;
