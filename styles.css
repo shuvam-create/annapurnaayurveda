@@ -1612,10 +1612,15 @@ ul, ol {
     position: relative;
 }
 
-.devraj-image-grid {
+/* Paired photos for a single doctor (Bihani, Devraj). These pairs mix
+   portrait and landscape shots, so each cell contains its photo rather than
+   cropping it - a 3:4 crop was cutting limbs off the full-body yoga photo.
+   The leftover space is filled with a blurred copy, same as the gallery.
+   The background-image is set inline on each .practitioner-img-inner. */
+.practitioner-image-grid {
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 0;
+    gap: 4px;
     max-width: 100%;
     margin: 0 auto;
     overflow: hidden;
@@ -1623,28 +1628,62 @@ ul, ol {
     box-shadow: var(--box-shadow);
 }
 
-.devraj-image-grid .practitioner-img-inner {
+.practitioner-image-grid .practitioner-img-inner {
+    position: relative;
     min-width: 0;
+    aspect-ratio: 4 / 5;
     overflow: hidden;
     border-radius: 0;
     box-shadow: none;
+    background-color: var(--dark-beige);
+    background-position: center;
 }
 
-.devraj-image-grid .practitioner-img-inner img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    aspect-ratio: 3 / 4;
+/* Reuse ::before as the blurred backdrop (in the single-photo layout it is a
+   decorative corner bracket, which would float loose over a grid cell). */
+.practitioner-image-grid .practitioner-img-inner::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    top: 0;
+    left: 0;
+    width: auto;
+    height: auto;
+    border: none;
+    animation: none;
+    background-image: inherit;
+    background-size: cover;
+    background-position: center;
+    filter: blur(24px) brightness(0.72);
+    transform: scale(1.15);
+    z-index: 0;
 }
 
-.devraj-image-grid .practitioner-img-inner::before,
-.devraj-image-grid .practitioner-img-inner::after {
+.practitioner-image-grid .practitioner-img-inner::after {
     display: none;
 }
 
+.practitioner-image-grid .practitioner-img-inner img {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    object-fit: contain; /* never crop the doctor out of frame */
+    border-radius: 0;
+}
+
+/* A large zoom would push the contained photo out of its cell */
+.practitioner-image-grid .practitioner-img-inner:hover img {
+    transform: scale(1.02);
+}
+
 @media (max-width: 768px) {
-    .devraj-image-grid {
+    .practitioner-image-grid {
         grid-template-columns: 1fr;
+    }
+
+    .practitioner-image-grid .practitioner-img-inner {
+        aspect-ratio: 4 / 3;
     }
 }
 
