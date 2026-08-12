@@ -1738,6 +1738,7 @@ ul, ol {
     position: absolute;
     bottom: 30px;
     right: -20px;
+    z-index: 2; /* must clear the grid photos (z-index 1) or they cover it */
     background: linear-gradient(135deg, var(--primary-color), var(--dark-green));
     color: var(--light-text);
     padding: clamp(1rem, 2vw, 1.3rem) clamp(1.5rem, 2.5vw, 2rem);
